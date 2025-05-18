@@ -25,14 +25,14 @@
   <div class="contador" id="contador"></div>
 
   <script>
-    const inicio = new Date(2025, 2, 22, 0, 0, 0); // 22 de março de 2025
+    const inicio = new Date(2025, 2, 22, 0, 0, 0); // 22 de março de 2025 (mês 2 = março)
 
     function atualizarContador() {
       const agora = new Date();
       let diff = agora - inicio;
 
       if (diff < 0) {
-        document.getElementById('contador').textContent = "Ainda não começou!";
+        document.getElementById('contador').textContent = "0 dias, 0h 0m 0s";
         return;
       }
 
