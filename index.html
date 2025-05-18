@@ -7,7 +7,6 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #6a0dad;
-      text-align: center;
       color: #ffffff;
       margin: 0;
       padding: 0;
@@ -16,6 +15,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      text-align: center;
     }
     .container {
       max-width: 600px;
@@ -36,7 +36,8 @@
       border-radius: 10px;
     }
     iframe {
-      max-width: 100%;
+      width: 100%;
+      height: 360px;
       border-radius: 10px;
       margin-bottom: 20px;
     }
@@ -56,7 +57,7 @@
       line-height: 1.5;
       color: #f0e6ff;
       white-space: pre-wrap;
-      text-align: left;
+      text-align: center;
     }
   </style>
 </head>
@@ -66,15 +67,17 @@
 
     <h1>JUNTOS HÁ....</h1>
     <div class="contador" id="contador"></div>
-    <div class="texto-namoro">A gente se conheceu sem esperar nada, mas deu certo.
-Obrigado por ser minha melhor companhia e escolha diária.
-</div>
 
-    <!-- Linha branca antes do vídeo, centralizada e estreita -->
+    <div class="texto-namoro">
+      A gente se conheceu sem esperar nada, mas deu certo.<br>
+      Obrigado por ser minha melhor companhia e escolha diária.
+    </div>
+
+    <!-- Linha branca antes do vídeo -->
     <hr />
 
-    <!-- Vídeo do YouTube -->
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/NY5-UdFxMnA" 
+    <!-- Vídeo do YouTube (um pouco maior) -->
+    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
     title="YouTube video player" frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen></iframe>
