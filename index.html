@@ -35,6 +35,19 @@
       margin-bottom: 20px;
       border-radius: 10px;
     }
+    iframe {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background-color: white;
+      margin: 20px auto;
+      width: 60%;
+      border-radius: 5px;
+    }
     .texto-namoro {
       background: rgba(255, 255, 255, 0.15);
       padding: 15px;
@@ -50,11 +63,21 @@
 <body>
   <div class="container">
     <img src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z&raw=1" alt="Imagem do casal" />
+
     <h1>JUNTOS HÁ....</h1>
     <div class="contador" id="contador"></div>
     <div class="texto-namoro">A gente se conheceu sem esperar nada, mas deu certo.
 Obrigado por ser minha melhor companhia e escolha diária.
 </div>
+
+    <!-- Linha branca antes do vídeo, centralizada e estreita -->
+    <hr />
+
+    <!-- Vídeo do YouTube -->
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/NY5-UdFxMnA" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
   </div>
 
   <script>
