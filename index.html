@@ -35,15 +35,6 @@
       margin-bottom: 20px;
       border-radius: 10px;
     }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 8px;
-      border: none;
-      resize: vertical;
-      margin-bottom: 20px;
-    }
     .texto-namoro {
       background: rgba(255, 255, 255, 0.15);
       padding: 15px;
@@ -59,9 +50,8 @@
 <body>
   <div class="container">
     <img src="https://via.placeholder.com/600x200?text=Minha+Imagem" alt="Imagem Exemplo" />
-    <h1>Juntos há....</h1>
+    <h1>JUNTOS HÁ....</h1>
     <div class="contador" id="contador"></div>
-    <textarea rows="4" placeholder="Digite algo aqui..."></textarea>
     <div class="texto-namoro">
       Às vezes, o que menos esperamos é exatamente o que mais precisamos.
 
@@ -71,33 +61,4 @@
 
       Somos a prova de que o amor não precisa ser planejado para ser verdadeiro. E que quando é para ser, faz muito bem para a alma.
 
-      Obrigado por ser meu encontro inesperado, minha escolha certa e o melhor que poderia me acontecer.
-    </div>
-  </div>
-
-  <script>
-    const inicio = new Date(2025, 2, 22, 0, 0, 0); // 22 de março de 2025
-
-    function atualizarContador() {
-      const agora = new Date();
-      let diff = agora - inicio;
-
-      if (diff < 0) {
-        document.getElementById('contador').textContent = "0 dias, 0h 0m 0s";
-        return;
-      }
-
-      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diff / (1000 * 60)) % 60);
-      const segundos = Math.floor((diff / 1000) % 60);
-
-      document.getElementById('contador').textContent =
-        `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-    }
-
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-  </script>
-</body>
-</html>
+      Obrigado por ser meu encontro inesperado, minha escolha
