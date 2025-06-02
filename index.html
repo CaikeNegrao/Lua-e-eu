@@ -13,7 +13,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       min-height: 100vh;
       text-align: center;
     }
@@ -29,11 +29,12 @@
       font-size: 2.5em;
       margin: 20px 0;
     }
-    /* Estilo para a imagem do topo */
-    .topo-img {
+    /* Imagem principal */
+    .imagem-principal {
       width: 100%;
-      max-height: 80vh;
+      max-height: 300px;
       object-fit: cover;
+      object-position: center;
       border-radius: 10px;
       margin-bottom: 20px;
       display: block;
@@ -61,57 +62,96 @@
       color: #f0e6ff;
       white-space: pre-wrap;
       text-align: center;
+      margin-bottom: 20px;
     }
-    /* Grid das imagens abaixo do vídeo */
+    /* Grid de imagens pequenas */
     .grid-imagens {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 15px;
-      margin-top: 20px;
+      max-width: 600px;
+      width: 90%;
       margin-bottom: 40px;
     }
     .grid-imagens img {
       width: 100%;
       height: 140px;
       object-fit: cover;
+      object-position: center;
       border-radius: 10px;
       display: block;
+    }
+    /* Ajuste especial para a imagem 8 */
+    .grid-imagens img.imagem8 {
+      object-position: top;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <img
-      class="topo-img"
-      src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z&raw=1"
-      alt="Imagem do casal" />
+      src="https://www.dropbox.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z&raw=1"
+      alt="Imagem do casal"
+      class="imagem-principal"
+    />
 
     <h1>JUNTOS HÁ....</h1>
     <div class="contador" id="contador" aria-label="Tempo desde o início do namoro"></div>
 
     <div class="texto-namoro">
-      Desde que você chegou, muita coisa mudou. Estar com você faz bem.<br>
+      Desde que você chegou, muita coisa mudou. Estar com você faz bem.<br />
       Obrigado por ser minha melhor companhia e escolha diária.
     </div>
 
     <hr />
 
-    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+    <iframe
+      src="https://www.youtube.com/embed/NY5-UdFxMnA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
 
+    <!-- Grid das imagens -->
     <div class="grid-imagens">
-      <img src="https://www.dropbox.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg?rlkey=yxqx146ulb3m5xwlzblqqt3jv&raw=1" alt="Imagem 1" />
-      <img src="https://www.dropbox.com/scl/fi/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg?rlkey=n1bguya0fgwg2dqdobx1rmewm&raw=1" alt="Imagem 2" />
-      <img src="https://www.dropbox.com/scl/fi/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg?rlkey=3nh05wjrwlqq2fbj6z3xyboxn&raw=1" alt="Imagem 3" />
-      <img src="https://www.dropbox.com/scl/fi/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg?rlkey=acfqpmorcqs60g74spk25hjw7&raw=1" alt="Imagem 4" />
-      <img src="https://www.dropbox.com/scl/fi/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg?rlkey=nhhbmgfqb9q9e07uzbh9w3tvs&raw=1" alt="Imagem 5" />
-      <img src="https://www.dropbox.com/scl/fi/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg?rlkey=q0cmdl1fq7nx08nyevifdhyu0&raw=1" alt="Imagem 6" />
-      <img src="https://www.dropbox.com/scl/fi/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg?rlkey=5l2ow4zklj594xmj2u1snxnw5&raw=1" alt="Imagem 7" />
-      <img src="https://www.dropbox.com/scl/fi/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg?rlkey=6163n1wem7ayugr1spn04r6g3&raw=1" alt="Imagem 8" />
-      <img src="https://www.dropbox.com/scl/fi/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg?rlkey=ir676owmfu4qdezq17jsh7zjz&raw=1" alt="Imagem 9" />
+      <img
+        src="https://www.dropbox.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg?rlkey=yxqx146ulb3m5xwlzblqqt3jv&raw=1"
+        alt="Imagem 1"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg?rlkey=n1bguya0fgwg2dqdobx1rmewm&raw=1"
+        alt="Imagem 2"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg?rlkey=3nh05wjrwlqq2fbj6z3xyboxn&raw=1"
+        alt="Imagem 3"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg?rlkey=acfqpmorcqs60g74spk25hjw7&raw=1"
+        alt="Imagem 4"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg?rlkey=nhhbmgfqb9q9e07uzbh9w3tvs&raw=1"
+        alt="Imagem 5"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg?rlkey=q0cmdl1fq7nx08nyevifdhyu0&raw=1"
+        alt="Imagem 6"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg?rlkey=5l2ow4zklj594xmj2u1snxnw5&raw=1"
+        alt="Imagem 7"
+      />
+      <img
+        class="imagem8"
+        src="https://www.dropbox.com/scl/fi/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg?rlkey=6163n1wem7ayugr1spn04r6g3&raw=1"
+        alt="Imagem 8"
+      />
+      <img
+        src="https://www.dropbox.com/scl/fi/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg?rlkey=ir676owmfu4qdezq17jsh7zjz&raw=1"
+        alt="Imagem 9"
+      />
     </div>
   </div>
 
@@ -120,9 +160,11 @@
 
     function atualizarContador() {
       const agora = new Date();
+      let diff = agora - inicio;
 
-      if (agora < inicio) {
-        document.getElementById('contador').textContent = "0 meses, 0 dias, 0h 0m 0s";
+      if (diff < 0) {
+        document.getElementById("contador").textContent =
+          "0 anos, 0 meses, 0 dias, 0h 0m 0s";
         return;
       }
 
@@ -146,12 +188,14 @@
       const segundos = agora.getSeconds();
 
       let texto = "";
+
       if (anos > 0) {
         texto += `${anos} anos, `;
       }
+
       texto += `${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
 
-      document.getElementById('contador').textContent = texto;
+      document.getElementById("contador").textContent = texto;
     }
 
     setInterval(atualizarContador, 1000);
