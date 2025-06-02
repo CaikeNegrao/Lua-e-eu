@@ -91,4 +91,62 @@
 
     <hr />
 
-    <
+    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+
+    <div class="galeria">
+      <img src="https://www.dropbox.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg?raw=1" alt="Imagem 1">
+      <img src="https://www.dropbox.com/scl/fi/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg?raw=1" alt="Imagem 2">
+      <img src="https://www.dropbox.com/scl/fi/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg?raw=1" alt="Imagem 3">
+      <img src="https://www.dropbox.com/scl/fi/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg?raw=1" alt="Imagem 4">
+      <img src="https://www.dropbox.com/scl/fi/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg?raw=1" alt="Imagem 5">
+      <img src="https://www.dropbox.com/scl/fi/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg?raw=1" alt="Imagem 6">
+      <img src="https://www.dropbox.com/scl/fi/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg?raw=1" alt="Imagem 7">
+      <img src="https://www.dropbox.com/scl/fi/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg?raw=1" alt="Imagem 8">
+      <img src="https://www.dropbox.com/scl/fi/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg?raw=1" alt="Imagem 9">
+    </div>
+  </div>
+
+  <script>
+    const inicio = new Date(2025, 2, 22); // 22 de março de 2025
+
+    function atualizarContador() {
+      const agora = new Date();
+      let diff = agora - inicio;
+
+      if (diff < 0) {
+        document.getElementById('contador').textContent = "0 anos, 0 meses, 0 dias, 0h 0m 0s";
+        return;
+      }
+
+      let anos = agora.getFullYear() - inicio.getFullYear();
+      let meses = agora.getMonth() - inicio.getMonth();
+      let dias = agora.getDate() - inicio.getDate();
+
+      if (dias < 0) {
+        meses--;
+        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+        dias += ultimoMes;
+      }
+
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      const horas = agora.getHours();
+      const minutos = agora.getMinutes();
+      const segundos = agora.getSeconds();
+
+      document.getElementById('contador').textContent =
+        `${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+</html>
