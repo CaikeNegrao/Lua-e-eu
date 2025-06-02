@@ -14,11 +14,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       width: 90%;
       padding: 20px;
     }
@@ -59,14 +59,30 @@
       white-space: pre-wrap;
       text-align: center;
     }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z&raw=1" alt="Imagem do casal" />
+    <img src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?raw=1" alt="Imagem do casal" />
 
     <h1>JUNTOS HÁ....</h1>
-    <div class="contador" id="contador" aria-label="Tempo desde o início do namoro"></div>
+    <div class="contador" id="contador"></div>
 
     <div class="texto-namoro">
       Desde que você chegou, muita coisa mudou. Estar com você faz bem.<br>
@@ -75,50 +91,4 @@
 
     <hr />
 
-    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <script>
-    const inicio = new Date(2025, 2, 22); // 22 de março de 2025
-
-    function atualizarContador() {
-      const agora = new Date();
-      let diff = agora - inicio;
-
-      if (diff < 0) {
-        document.getElementById('contador').textContent = "0 anos, 0 meses, 0 dias, 0h 0m 0s";
-        return;
-      }
-
-      let anos = agora.getFullYear() - inicio.getFullYear();
-      let meses = agora.getMonth() - inicio.getMonth();
-      let dias = agora.getDate() - inicio.getDate();
-
-      if (dias < 0) {
-        meses--;
-        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
-        dias += ultimoMes;
-      }
-
-      if (meses < 0) {
-        anos--;
-        meses += 12;
-      }
-
-      const horas = agora.getHours();
-      const minutos = agora.getMinutes();
-      const segundos = agora.getSeconds();
-
-      document.getElementById('contador').textContent =
-        `${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-    }
-
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-  </script>
-</body>
-</html>
+    <
