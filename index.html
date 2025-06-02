@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #6a0dad;
+      background-color: #000000; /* fundo preto */
       color: #ffffff;
       margin: 0;
       padding: 0;
@@ -50,7 +50,7 @@
       border-radius: 5px;
     }
     .texto-namoro {
-      background: rgba(255, 255, 255, 0.15);
+      background: #1e1e1e; /* cinza escuro */
       padding: 15px;
       border-radius: 10px;
       font-size: 1.1em;
@@ -66,42 +66,55 @@
     <img src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z&raw=1" alt="Imagem do casal" />
 
     <h1>JUNTOS HÁ....</h1>
-    <div class="contador" id="contador"></div>
+    <div class="contador" id="contador" aria-label="Tempo desde o início do namoro"></div>
 
     <div class="texto-namoro">
       Desde que você chegou, muita coisa mudou. Estar com você faz bem.<br>
-    Obrigado por ser minha melhor companhia e escolha diária.
+      Obrigado por ser minha melhor companhia e escolha diária.
     </div>
 
-    <!-- Linha branca antes do vídeo -->
     <hr />
 
-    <!-- Vídeo do YouTube (um pouco maior) -->
     <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen></iframe>
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
   </div>
 
   <script>
-    const inicio = new Date(2025, 2, 22, 0, 0, 0); // 22 de março de 2025
+    const inicio = new Date(2025, 2, 22); // 22 de março de 2025
 
     function atualizarContador() {
       const agora = new Date();
       let diff = agora - inicio;
 
       if (diff < 0) {
-        document.getElementById('contador').textContent = "0 dias, 0h 0m 0s";
+        document.getElementById('contador').textContent = "0 anos, 0 meses, 0 dias, 0h 0m 0s";
         return;
       }
 
-      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diff / (1000 * 60)) % 60);
-      const segundos = Math.floor((diff / 1000) % 60);
+      let anos = agora.getFullYear() - inicio.getFullYear();
+      let meses = agora.getMonth() - inicio.getMonth();
+      let dias = agora.getDate() - inicio.getDate();
+
+      if (dias < 0) {
+        meses--;
+        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+        dias += ultimoMes;
+      }
+
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      const horas = agora.getHours();
+      const minutos = agora.getMinutes();
+      const segundos = agora.getSeconds();
 
       document.getElementById('contador').textContent =
-        `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+        `${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
     }
 
     setInterval(atualizarContador, 1000);
