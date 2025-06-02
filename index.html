@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000000; /* fundo preto */
+      background-color: #000000;
       color: #ffffff;
       margin: 0;
       padding: 0;
@@ -36,7 +36,6 @@
     img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 20px;
       border-radius: 10px;
     }
 
@@ -57,20 +56,54 @@
     }
 
     .texto-namoro {
-      background: #1e1e1e; /* cinza escuro */
+      background: #1e1e1e;
       padding: 15px;
       border-radius: 10px;
       font-size: 1.1em;
       line-height: 1.5;
       color: #f0e6ff;
       white-space: pre-wrap;
-      text-align: center;
+    }
+
+    .carrossel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 30px;
+    }
+
+    .carrossel img {
+      display: none;
+      width: 100%;
+    }
+
+    .carrossel img.ativo {
+      display: block;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .botoes button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .botoes button:hover {
+      background-color: #666;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Imagem principal -->
     <img src="https://dl.dropboxusercontent.com/scl/fi/m1qw4j8nnz6fokzfdj6qe/IMG_20250322_144932.jpg?rlkey=80gpvuhijllsyxhfu8zs1x37z" alt="Imagem do casal" />
 
     <h1>JUNTOS HÁ....</h1>
@@ -83,18 +116,31 @@
 
     <hr />
 
-    <!-- Vídeo do YouTube -->
     <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
       title="YouTube video player" frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
     </iframe>
 
-    <!-- Imagem final adicionada -->
     <hr />
-    <img src="https://dl.dropboxusercontent.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg?rlkey=yxqx146ulb3m5xwlzblqqt3jv" 
-         alt="Imagem extra" 
-         style="max-width: 100%; border-radius: 10px; margin-bottom: 30px;" />
+
+    <!-- Carrossel de Imagens -->
+    <div class="carrossel" id="carrossel">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg?rlkey=yxqx146ulb3m5xwlzblqqt3jv" class="ativo" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg?rlkey=n1bguya0fgwg2dqdobx1rmewm" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg?rlkey=3nh05wjrwlqq2fbj6z3xyboxn" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg?rlkey=acfqpmorcqs60g74spk25hjw7" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg?rlkey=nhhbmgfqb9q9e07uzbh9w3tvs" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg?rlkey=q0cmdl1fq7nx08nyevifdhyu0" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg?rlkey=5l2ow4zklj594xmj2u1snxnw5" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg?rlkey=6163n1wem7ayugr1spn04r6g3" />
+      <img src="https://dl.dropboxusercontent.com/scl/fi/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg?rlkey=ir676owmfu4qdezq17jsh7zjz" />
+    </div>
+
+    <div class="botoes">
+      <button onclick="mudarImagem(-1)">Anterior</button>
+      <button onclick="mudarImagem(1)">Próxima</button>
+    </div>
   </div>
 
   <script>
@@ -105,7 +151,7 @@
       let diff = agora - inicio;
 
       if (diff < 0) {
-        document.getElementById('contador').textContent = "0 anos, 0 meses, 0 dias, 0h 0m 0s";
+        document.getElementById('contador').textContent = "0 meses, 0 dias, 0h 0m 0s";
         return;
       }
 
@@ -128,12 +174,26 @@
       const minutos = agora.getMinutes();
       const segundos = agora.getSeconds();
 
-      document.getElementById('contador').textContent =
-        `${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+      const texto =
+        (anos > 0 ? `${anos} ${anos === 1 ? "ano" : "anos"}, ` : "") +
+        `${meses} ${meses === 1 ? "mês" : "meses"}, ` +
+        `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+
+      document.getElementById('contador').textContent = texto;
     }
 
     setInterval(atualizarContador, 1000);
     atualizarContador();
+
+    // Carrossel
+    let indiceAtual = 0;
+    const imagens = document.querySelectorAll('#carrossel img');
+
+    function mudarImagem(direcao) {
+      imagens[indiceAtual].classList.remove('ativo');
+      indiceAtual = (indiceAtual + direcao + imagens.length) % imagens.length;
+      imagens[indiceAtual].classList.add('ativo');
+    }
   </script>
 </body>
 </html>
