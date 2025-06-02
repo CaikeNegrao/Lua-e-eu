@@ -6,15 +6,13 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000000; /* fundo preto */
+      background-color: #000000;
       color: #ffffff;
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
     }
     .container {
@@ -32,7 +30,6 @@
     img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 20px;
       border-radius: 10px;
     }
     iframe {
@@ -50,7 +47,7 @@
       border-radius: 5px;
     }
     .texto-namoro {
-      background: #1e1e1e; /* cinza escuro */
+      background: #1e1e1e;
       padding: 15px;
       border-radius: 10px;
       font-size: 1.1em;
@@ -58,21 +55,19 @@
       color: #f0e6ff;
       white-space: pre-wrap;
       text-align: center;
+      margin-bottom: 20px;
     }
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
       margin-top: 20px;
     }
     .galeria img {
       width: 100%;
-      border-radius: 10px;
+      height: auto;
       object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .galeria img:hover {
-      transform: scale(1.05);
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -90,28 +85,27 @@
 
     <hr />
 
-    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    <iframe src="https://www.youtube.com/embed/NY5-UdFxMnA"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
 
-    <!-- Galeria de imagens -->
     <div class="galeria">
-      <img src="https://dl.dropboxusercontent.com/s/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg" alt="Imagem 1">
-      <img src="https://dl.dropboxusercontent.com/s/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg" alt="Imagem 2">
-      <img src="https://dl.dropboxusercontent.com/s/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg" alt="Imagem 3">
-      <img src="https://dl.dropboxusercontent.com/s/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg" alt="Imagem 4">
-      <img src="https://dl.dropboxusercontent.com/s/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg" alt="Imagem 5">
-      <img src="https://dl.dropboxusercontent.com/s/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg" alt="Imagem 6">
-      <img src="https://dl.dropboxusercontent.com/s/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg" alt="Imagem 7">
-      <img src="https://dl.dropboxusercontent.com/s/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg" alt="Imagem 8">
-      <img src="https://dl.dropboxusercontent.com/s/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg" alt="Imagem 9">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/t4zcnv49n2ejk56l96kgc/IMG_20250305_091244.jpg" alt="Imagem 1">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/2k5aovhvol7k53kewhqns/IMG_20250307_202639.jpg" alt="Imagem 2">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/h9wq9kppe1xqhhuf4tigo/IMG_20250323_144147.jpg" alt="Imagem 3">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/4c1pe4do1ttoplbpk0xmv/IMG_20250323_144218.jpg" alt="Imagem 4">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/6x9ca2fqfzzgiukf7zsr3/IMG_20250323_144249.jpg" alt="Imagem 5">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/lu1n2w43u1hioej148ns4/IMG_20250323_144320.jpg" alt="Imagem 6">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/re7tqd6mjd328pgzhwkzu/IMG_20250324_090256.jpg" alt="Imagem 7">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/73vf15wq6nc8f8n6nai6b/IMG-20241119-WA0032.jpg" alt="Imagem 8">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/hrzkn1vsn5bxzae92ii74/IMG-20250408-WA0021.jpg" alt="Imagem 9">
     </div>
   </div>
 
   <script>
-    const inicio = new Date(2025, 2, 22); // 22 de março de 2025
+    const inicio = new Date(2025, 2, 22);
 
     function atualizarContador() {
       const agora = new Date();
@@ -149,4 +143,4 @@
     atualizarContador();
   </script>
 </body>
-</html></html>
+</html>
